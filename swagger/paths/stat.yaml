@@ -1,0 +1,12 @@
+/stat:
+  get:
+    tags:
+      - func
+    summary: Airmnb statistic information
+    responses:
+      '200':
+        description: successful login
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Stat.yaml'

@@ -1,0 +1,17 @@
+Stat:
+  type: object
+  properties:
+    totalRegisteredUsers:
+      type: integer
+    totalOnlineUsers:
+      type: integer    
+    totalProviders:
+      type: integer
+    totalBabies:
+      type: integer
+    totalActivities:
+      type: integer
+    totalBookings:
+      type: integer    
+    totalTransactions:
+      type: integer

@@ -1,0 +1,16 @@
+{
+  "name": "airmnb-api-doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "yamlinc --watch spectacle -d index.yaml",
+    "build": "yamlinc index.yaml",
+    "help": "yamlinc --help"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "yamlinc": "0.0.64"
+  }
+}

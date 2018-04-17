@@ -1,0 +1,5 @@
+schemas:
+  $include: './schemas/Stat.yaml'
+  $include: './schemas/User.yaml'
+requestBodies: 
+  $include: './requestBodies/sample.yaml'

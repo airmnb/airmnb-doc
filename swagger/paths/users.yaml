@@ -1,0 +1,20 @@
+/users/{userid}:
+  get:
+    tags:
+      - res
+    summary: get user object
+    parameters:
+      - name: userid
+        in: path
+        description: Airmnb userid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: existing user
+        content:
+          application/json:
+            schema:
+              $include: '#/components/schemas/User.yaml'

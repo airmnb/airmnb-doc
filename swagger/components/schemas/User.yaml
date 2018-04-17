@@ -1,0 +1,25 @@
+User:
+  type: object
+  properties:
+    userid:
+      type: string
+      format: uuid
+      description: Amb user's ID
+    username:
+      type: string
+    fullname:
+      type: string
+    firstname:
+      type: string
+    lastname:
+      type: string
+    gender:
+      type: boolean
+    dob:
+      type: string
+      format: date
+    email:
+      type: string
+      format: email
+    phone:
+      type: string

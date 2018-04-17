@@ -1,0 +1,26 @@
+openapi: 3.0.0
+servers:
+  - url: 'https://www.airmnb.com/api/1.0.0'
+  - url: 'https://www.airmombaby.com/api/1.0.0'
+info:
+  description: This is the API design for Air Mom & Baby Global
+    [https://www.airmombaby.com](https://www.airmombaby.com) and Air Mom & Baby China 
+    [https://www.airmnb.com](https://www.airmnb.com).
+  version: "1.0.0"
+  title: Airmnb API design
+  termsOfService: 'pending'
+  contact:
+    email: mr.shaojun@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  $include: './tags/tags.yaml'
+paths:
+  $include: './paths/login.yaml'
+  $include: './paths/logout.yaml'
+  $include: './paths/stat.yaml'
+  $include: './paths/health-check.yaml'
+  $include: './paths/users.yaml'
+components:
+  $include: './components/index.yaml'
