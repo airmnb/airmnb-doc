@@ -12,6 +12,6 @@ Stat:
     totalActivities:
       type: integer
     totalBookings:
-      type: integer    
+      type: integer
     totalTransactions:
       type: integer

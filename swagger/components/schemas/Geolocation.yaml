@@ -1,0 +1,17 @@
+Geolocation:
+  type: object
+  properties:
+    addr1:
+      type: string
+    addr2:
+      type: string
+    addr3:
+      type: string
+    city:
+      type: string
+    state:
+      type: string
+    country:
+      type: string
+    postcode:
+      type: string

@@ -6,6 +6,7 @@
     parameters: 
       - name: code
         in: query
+        required: true
         description: Wexin code derived after calling wx.login()
         schema:
           type: string

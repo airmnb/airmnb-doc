@@ -1,5 +1,7 @@
 schemas:
   $include: './schemas/Stat.yaml'
   $include: './schemas/User.yaml'
+  $include: './schemas/Provider.yaml'
+  $include: './schemas/Geolocation.yaml'
 requestBodies: 
   $include: './requestBodies/sample.yaml'

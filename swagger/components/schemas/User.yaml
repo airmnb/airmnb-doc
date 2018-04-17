@@ -5,21 +5,52 @@ User:
       type: string
       format: uuid
       description: Amb user's ID
+      example: 9aa7bb47-90fb-45a1-9020-976464b08b65
     username:
       type: string
+      description: Amb user name, unique across the whole Airmnb world. Once created, cannot change
+      example: superopengl
     fullname:
       type: string
+      description: Like "邵俊" which is the fullname in Chinese as Chinese users rarely separate to first name and last name
+      example: 邵俊
     firstname:
       type: string
+      example: Jun
     lastname:
       type: string
+      example: Shao
     gender:
       type: boolean
+      example: false
     dob:
       type: string
       format: date
+      example: '2018-12-31'
     email:
       type: string
       format: email
+      example: test@airmombaby.com
     phone:
       type: string
+      example: '04051234567'
+    language:
+      type: string
+      enum: [en, ch]
+      description: The user preferred UI language
+      example: en
+    wechatopenid:
+      type: string
+      description: WeChat openid if the user is from WeApp. openid is the value returned by calling wx.login()
+    googlessoid:
+      type: string
+      description: Usually can be the gmail address derived from Google SSO
+    facebookssoid:
+      type: string
+      description: Usually Facebook user id derived from Facebook SSO
+    createdat:
+      type: string
+      format: date-time
+      description: The timestamp (with timezone info) the user was created initially
+      example: '2018-04-17T14:00:33.591Z'
+      

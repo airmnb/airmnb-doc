@@ -18,3 +18,5 @@
             location:
               schema:
                 type: "string"
+                description: redirect to the home page
+                example: /

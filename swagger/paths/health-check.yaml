@@ -10,3 +10,4 @@
           application/json:
             schema:
               type: string
+              example: OK
