@@ -6,11 +6,22 @@
   "scripts": {
     "start": "yamlinc --watch spectacle -d index.yaml",
     "build": "yamlinc index.yaml",
-    "help": "yamlinc --help"
+    "help": "yamlinc --help",
+    "watch": "npm-watch build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "npm-watch": "^0.3.0",
     "yamlinc": "0.0.64"
+  },
+  "watch": {
+    "build": {
+      "patterns": ["**/*.yaml"],
+      "extensions": "yaml",
+      "ignore": "index.inc.yaml",
+      "quiet": false,
+      "delay": 1000
+    }
   }
 }
