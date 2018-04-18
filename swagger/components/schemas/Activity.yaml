@@ -1,0 +1,68 @@
+Activity:
+  type: object
+  properties:
+    activityid:
+      type: string
+      format: uuid
+      example: 1237bb47-90fb-bd1-4320-976464b04567
+    providerid:
+      type: string
+      format: uuid
+      example: 99999999-9999-999-9999-976464b04567
+    title:
+      type: string
+      example: Funny music lesson
+    description:
+      type: string
+      example: I am a female music teacher who can teach singing and drum. Please join me.
+    cap:
+      type: integer
+      example: maximum children I can serve at a time
+    price:
+      type: string
+      format: currency
+      description: the total price for this activity. Can be 0 for free activity.
+      example: $100
+    acceptagemin:
+      type: integer
+      description: the minimum child age. Not specifying means no limit
+      example: 6
+    acceptagemax:
+      type: integer
+      description: the maximum child age. Not specifying means no limit
+      example: 12
+    acceptgender:
+      type: integer
+      description: 0 or 3 means either boy or girl. 1 for girl, 2 for boy
+      example: 3
+    startat:
+      type: string
+      format: date-time
+      example: '2018-04-17T14:00:00.000Z'
+    endat:
+      type: string
+      format: date-time
+      example: '2018-04-17T16:00:00.000Z'
+    active:
+      type: boolean
+      description: if the activity is active. Provider can cancel or close an activity before its starting
+      example: true
+    language:
+      type: integer
+      description: The language the service will be provided in. 1 for English, 2 for Mandarin
+      example: 3
+    createdat:
+      type: string
+      format: date-time
+      description: The timestamp (with timezone info) the user was created initially
+      example: '2018-04-17T14:00:33.591Z'
+  required:
+    - nactivityid
+    - providerid
+    - title
+    - description
+    - cap
+    - price
+    - startat
+    - endat
+    - createdat
