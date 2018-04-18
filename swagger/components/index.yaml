@@ -3,5 +3,7 @@ schemas:
   $include: './schemas/User.yaml'
   $include: './schemas/Provider.yaml'
   $include: './schemas/Geolocation.yaml'
+  $include: './schemas/Activity.yaml'
+  $include: './schemas/ActivityComment.yaml'
 requestBodies: 
   $include: './requestBodies/sample.yaml'
