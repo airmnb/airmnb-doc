@@ -1,6 +1,7 @@
 # Features (Business Scenarios)
 
 # Swagger
+The swagger is written in OpenAPI 3.0 yaml format. We use SwaggerHub as the mock server.
 
 ## Source code
 See [`./swagger/README.md`](swagger/README.md) for how to develop the swagger code base.
