@@ -53,4 +53,5 @@ User:
       format: date-time
       description: The timestamp (with timezone info) the user was created initially
       example: '2018-04-17T14:00:33.591Z'
-      
+  required:
+    - userid

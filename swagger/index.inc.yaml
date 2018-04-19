@@ -217,6 +217,8 @@ components:
           format: date-time
           description: The timestamp (with timezone info) the user was created initially
           example: '2018-04-17T14:00:33.591Z'
+      required:
+        - userid
     Provider:
       description: >-
         a provider is user object with certain must-have properites, like
@@ -284,6 +286,48 @@ components:
           type: string
         postcode:
           type: string
+    Baby:
+      type: object
+      properties:
+        babyid:
+          type: string
+          format: uuid
+          description: Amb baby's ID
+          example: 9aa7bb47-90fb-45a1-9020-976464b08b65
+        babyname:
+          type: string
+          description: Baby's name. Can be nickname
+          example: Alice
+        gender:
+          type: boolean
+          example: false
+        dob:
+          type: string
+          format: date
+          example: '2018-12-31'
+        language:
+          type: string
+          enum:
+            - en
+            - ch
+          description: The user preferred UI language
+          example: en
+        owneruserid:
+          type: string
+          format: uuid
+          description: baby's parent's ID
+          example: 44444444-4444-4444-4444-976464b08b65
+        createdat:
+          type: string
+          format: date-time
+          description: The timestamp (with timezone info) the user was created initially
+          example: '2018-04-17T14:00:33.591Z'
+      required:
+        - babyid
+        - babyname
+        - gender
+        - dob
+        - owneruserid
     Activity:
       type: object
       properties:
@@ -392,6 +436,16 @@ components:
           format: date-time
           description: The timestamp (with timezone info) the user was created initially
           example: '2018-04-17T14:00:33.591Z'
+        sequenceid:
+          type: integer
+          description: The sequencial integer of the booking for this activity
+          example: 1
+        status:
+          type: integer
+          description: >-
+            1 active, 2 checkedin, 4 finished, 8 cancelled, 16 terminated, 32
+            inactive
+          example: 1
       required:
         - activityid
         - bookingid
@@ -399,5 +453,11 @@ components:
         - consumerid
         - content
         - staring
+        - createdat
+        - bookingid
+        - activityid
+        - providerid
+        - consumerid
+        - status
         - createdat
   requestBodies: {}
