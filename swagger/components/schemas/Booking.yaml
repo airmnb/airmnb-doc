@@ -1,4 +1,4 @@
-ActivityComment:
+Booking:
   type: object
   properties:
     bookingid:
