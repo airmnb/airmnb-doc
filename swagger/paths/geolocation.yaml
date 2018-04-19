@@ -1,0 +1,68 @@
+/geolocations/{geolocationid}:
+  get:
+    tags:
+      - res
+    summary: get geolocationid object
+    parameters:
+      - name: geolocationid
+        in: path
+        description: Airmnb geolocationid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: existing geolocationid
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Geolocation'
+  put:
+    tags:
+      - res
+    summary: update geolocation object
+    parameters:
+      - name: geolocationid
+        in: path
+        description: Airmnb geolocationid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Geolocation'
+  delete:
+    tags:
+      - res
+    summary: delete a geolocation object
+    parameters:
+      - name: geolocationid
+        in: path
+        description: Airmnb geolocationid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: deleted
+/geolocations:
+  post:
+    tags:
+      - res
+    summary: create a new geolocation object
+    requrestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Geolocation'
+    responses:
+      '201':
+        description: created
+

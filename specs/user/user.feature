@@ -12,6 +12,7 @@
       | fullname  | Jun Shao                             | yes      | User's full name (Chinese users don't separate first name and last name) |
       | firstname | Jun                                  | yes      |                                                                          |
       | lastname  | Shao                                 | yes      |                                                                          |
+    And I need to "GET" api "/login/weapp"
 
   Scenario: As a WeApp user I should be able to update my Airmnb user information (profile)
     Given I launch the WeApp application in Wechat
@@ -33,3 +34,4 @@
       | fullname  | Jun Shao     | x        |
       | firstname | Jun          | x        |
       | lastname  | Shao         | x        |
+    And I need "PUT" api "/user/{userid}"

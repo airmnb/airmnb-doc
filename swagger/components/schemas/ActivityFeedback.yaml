@@ -1,4 +1,4 @@
-ActivityComment:
+ActivityFeedback:
   type: object
   properties:
     activityid:

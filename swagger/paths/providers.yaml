@@ -1,0 +1,79 @@
+/providers/{providerid}:
+  description: A provider is a user with more detailed and mandatory information requirement, like ABN, real name, national ID, and so forth
+  get:
+    tags:
+      - res
+    summary: get provider object
+    parameters:
+      - name: providerid
+        in: path
+        description: Airmnb providerid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: existing user
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Provider'
+  put:
+    tags:
+      - res
+    summary: update provider object
+    parameters:
+      - name: providerid
+        in: path
+        description: Airmnb providerid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Provider'
+/providers/{providerid}/geolocations:
+  get:
+    tags:
+      - res
+    summary: get all the geolocations by this provider
+    parameters:
+      - name: providerid
+        in: path
+        description: Airmnb providerid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: existing user
+        content:
+          application/json:
+            type: array
+            schema:
+              $ref: '#/components/schemas/Geolocation'
+  post:
+    tags:
+      - res
+    summary: Add a new geolocation for the provider
+    parameters:
+      - name: providerid
+        in: path
+        description: Airmnb providerid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Geolocation'
+

@@ -22,5 +22,6 @@ paths:
   $include: './paths/stat.yaml'
   $include: './paths/health-check.yaml'
   $include: './paths/users.yaml'
+  $include: './paths/babies.yaml'
 components:
   $include: './components/index.yaml'

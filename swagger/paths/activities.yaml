@@ -1,0 +1,93 @@
+/activities/{activityid}:
+  get:
+    tags:
+      - res
+    summary: get activity object
+    parameters:
+      - name: activityid
+        in: path
+        description: Airmnb activityid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: existing activity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Activity'
+  put:
+    tags:
+      - res
+    summary: update activity object
+    parameters:
+      - name: activityid
+        in: path
+        description: Airmnb activityid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Activity'
+  delete:
+    tags:
+      - res
+    summary: delete an activity object
+    parameters:
+      - name: activityid
+        in: path
+        description: Airmnb activityid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: deleted
+/activities:
+  get:
+    tags:
+      - res
+    summery: Query or search the activities
+    parameters:
+      - name: lng
+        in: query
+        description: Geolocation longitued
+        schema:
+          type: number
+        required: true
+      - name: lat
+        in: query
+        description: Geolocation lattitude
+        schema:
+          type: number
+        required: true
+    responses:
+      '200':
+        description: deleted
+        content:
+          application/json:
+            schema:
+              type: array
+
+  post:
+    tags:
+      - res
+    summary: create a new activity
+    requrestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Activity'
+    responses:
+      '201':
+        description: created
+

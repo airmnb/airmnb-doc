@@ -17,4 +17,39 @@
         content:
           application/json:
             schema:
-              $include: '#/components/schemas/User.yaml'
+              $ref: '#/components/schemas/User'
+  put:
+    tags:
+      - res
+    summary: update user object
+    parameters:
+      - name: userid
+        in: path
+        description: Airmnb userid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: updated user object
+        content:
+          application/json:
+            schema:
+              type: string
+              example: ""
+/users:
+  post:
+    tags:
+      - res
+    summary: create a new user object
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+    responses:
+      '201':
+        description: created
+

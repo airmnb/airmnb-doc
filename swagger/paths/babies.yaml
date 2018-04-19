@@ -1,0 +1,67 @@
+/babies/{babyid}:
+  get:
+    tags:
+      - res
+    summary: get baby object
+    parameters:
+      - name: babyid
+        in: path
+        description: Airmnb babyid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: existing user
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Baby'
+  put:
+    tags:
+      - res
+    summary: update baby object
+    parameters:
+      - name: babyid
+        in: path
+        description: Airmnb babyid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: updated
+        content:
+          application/json: {}
+  delete:
+    tags:
+      - res
+    summary: delete a baby object
+    parameters:
+      - name: babyid
+        in: path
+        description: Airmnb babyid
+        schema:
+          type: string
+          format: uuid
+        required: true
+    responses:
+      '200':
+        description: deleted
+/babies:
+  post:
+    tags:
+      - res
+    summary: create a new baby for a user
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Baby'
+    responses:
+      '201':
+        description: created
+
