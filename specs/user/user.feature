@@ -34,4 +34,4 @@
       | fullname  | Jun Shao     | x        |
       | firstname | Jun          | x        |
       | lastname  | Shao         | x        |
-    And I need "PUT" api "/user/{userid}"
+    And I need to "PUT" api "/user/{userid}"

@@ -19,6 +19,7 @@
       | closeat | Apr 8, 11:00 am   |                              |
       | price   | $50.0 AUD         |                              |
       | stars   | ☆☆☆☆☆             |                              |
+    And I need to "GET" api ""
 
   Scenario: Markers on the page
     When I click any marker on the page
