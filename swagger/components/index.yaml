@@ -7,5 +7,6 @@ schemas:
   $include: './schemas/Activity.yaml'
   $include: './schemas/ActivityFeedback.yaml'
   $include: './schemas/Booking.yaml'
+  $include: './schemas/Response.yaml'
 requestBodies: 
   $include: './requestBodies/User.yaml'
