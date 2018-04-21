@@ -2,7 +2,7 @@ schemas:
   $include: './schemas/Stat.yaml'
   $include: './schemas/User.yaml'
   $include: './schemas/Provider.yaml'
-  $include: './schemas/Geolocation.yaml'
+  $include: './schemas/Venue.yaml'
   $include: './schemas/Baby.yaml'
   $include: './schemas/Activity.yaml'
   $include: './schemas/ActivityFeedback.yaml'

@@ -32,10 +32,7 @@
         required: true
     responses:
       '200':
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Activity'
+        description: updated activity
   delete:
     tags:
       - res
@@ -59,13 +56,13 @@
     parameters:
       - name: lng
         in: query
-        description: Geolocation longitued
+        description: Venue longitued
         schema:
           type: number
         required: true
       - name: lat
         in: query
-        description: Geolocation lattitude
+        description: Venue lattitude
         schema:
           type: number
         required: true

@@ -33,11 +33,6 @@
     responses:
       '200':
         description: updated user object
-        content:
-          application/json:
-            schema:
-              type: string
-              example: ""
 /users:
   post:
     tags:

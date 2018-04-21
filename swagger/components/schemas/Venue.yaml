@@ -1,0 +1,37 @@
+Venue:
+  type: object
+  properties:
+    lng:
+      type: number
+      example: 150.34882763
+    lat:
+      type: number
+      example: -30.4589329
+    addr1:
+      type: string
+      example: Unit 1205 
+    addr2:
+      type: string
+      example: Archor street
+    addr3:
+      type: string
+    city:
+      type: string
+      example: Sydney
+    state:
+      type: string
+      example: NSW
+    country:
+      type: string
+      example: Australia
+    postcode:
+      type: string
+      example: '2001'
+  required:
+    - lng
+    - lat
+    - addr1
+    - city
+    - state
+    - country
+    - postcode

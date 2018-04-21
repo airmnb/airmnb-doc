@@ -1,31 +1,31 @@
-/geolocations/{geolocationid}:
+/venues/{venueid}:
   get:
     tags:
       - res
-    summary: get geolocationid object
+    summary: get venueid object
     parameters:
-      - name: geolocationid
+      - name: venueid
         in: path
-        description: Airmnb geolocationid
+        description: Airmnb venueid
         schema:
           type: string
           format: uuid
         required: true
     responses:
       '200':
-        description: existing geolocationid
+        description: existing venueid
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Geolocation'
+              $ref: '#/components/schemas/venue'
   put:
     tags:
       - res
-    summary: update geolocation object
+    summary: update venue object
     parameters:
-      - name: geolocationid
+      - name: venueid
         in: path
-        description: Airmnb geolocationid
+        description: Airmnb venueid
         schema:
           type: string
           format: uuid
@@ -35,15 +35,15 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Geolocation'
+              $ref: '#/components/schemas/venue'
   delete:
     tags:
       - res
-    summary: delete a geolocation object
+    summary: delete a venue object
     parameters:
-      - name: geolocationid
+      - name: venueid
         in: path
-        description: Airmnb geolocationid
+        description: Airmnb venueid
         schema:
           type: string
           format: uuid
@@ -51,17 +51,17 @@
     responses:
       '200':
         description: deleted
-/geolocations:
+/Venues:
   post:
     tags:
       - res
-    summary: create a new geolocation object
+    summary: create a new venue object
     requrestBody:
       required: true
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Geolocation'
+            $ref: '#/components/schemas/venue'
     responses:
       '201':
         description: created

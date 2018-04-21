@@ -37,11 +37,11 @@
           application/json:
             schema:
               $ref: '#/components/schemas/Provider'
-/providers/{providerid}/geolocations:
+/providers/{providerid}/Venues:
   get:
     tags:
       - res
-    summary: get all the geolocations by this provider
+    summary: get all the Venues by this provider
     parameters:
       - name: providerid
         in: path
@@ -57,11 +57,11 @@
           application/json:
             type: array
             schema:
-              $ref: '#/components/schemas/Geolocation'
+              $ref: '#/components/schemas/Venue'
   post:
     tags:
       - res
-    summary: Add a new geolocation for the provider
+    summary: Add a new Venue for the provider
     parameters:
       - name: providerid
         in: path
@@ -75,5 +75,5 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Geolocation'
+              $ref: '#/components/schemas/Venue'
 

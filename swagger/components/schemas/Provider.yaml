@@ -36,5 +36,5 @@ Provider:
     identitynumber:
       type: string
     address:
-      $ref: '#/components/schemas/Geolocation'
+      $ref: '#/components/schemas/Venue'
 
