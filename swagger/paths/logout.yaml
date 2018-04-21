@@ -1,12 +1,12 @@
-/logout/{userid}:
+/logout/{userId}:
   get:
     tags:
       - func
     summary: Airmnb logout
     parameters: 
-      - name: userid
+      - name: userId
         in: path
-        description: Airmnb userid
+        description: Airmnb userId
         schema:
           type: string
           format: uuid

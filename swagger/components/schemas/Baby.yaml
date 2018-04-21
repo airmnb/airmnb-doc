@@ -1,7 +1,7 @@
 Baby:
   type: object
   properties:
-    babyid:
+    babyId:
       type: string
       format: uuid
       description: Amb baby's ID
@@ -27,13 +27,13 @@ Baby:
       format: uuid
       description: baby's parent's ID
       example: 44444444-4444-4444-4444-976464b08b65
-    createdat:
+    createAt:
       type: string
       format: date-time
       description: The timestamp (with timezone info) the user was created initially
       example: '2018-04-17T14:00:33.591Z'
   required:
-    - babyid
+    - babyId
     - babyname
     - gender
     - dob

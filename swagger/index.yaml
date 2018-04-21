@@ -19,7 +19,7 @@ tags:
 paths:
   $include: './paths/login.yaml'
   $include: './paths/logout.yaml'
-  $include: './paths/stat.yaml'
+  $include: './paths/about.yaml'
   $include: './paths/health-check.yaml'
   $include: './paths/users.yaml'
   $include: './paths/babies.yaml'

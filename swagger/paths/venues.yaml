@@ -1,19 +1,19 @@
-/venues/{venueid}:
+/venues/{venueId}:
   get:
     tags:
       - res
-    summary: get venueid object
+    summary: get venueId object
     parameters:
-      - name: venueid
+      - name: venueId
         in: path
-        description: Airmnb venueid
+        description: Airmnb venueId
         schema:
           type: string
           format: uuid
         required: true
     responses:
       '200':
-        description: existing venueid
+        description: existing venueId
         content:
           application/json:
             schema:
@@ -23,9 +23,9 @@
       - res
     summary: update venue object
     parameters:
-      - name: venueid
+      - name: venueId
         in: path
-        description: Airmnb venueid
+        description: Airmnb venueId
         schema:
           type: string
           format: uuid
@@ -41,9 +41,9 @@
       - res
     summary: delete a venue object
     parameters:
-      - name: venueid
+      - name: venueId
         in: path
-        description: Airmnb venueid
+        description: Airmnb venueId
         schema:
           type: string
           format: uuid

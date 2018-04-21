@@ -1,0 +1,24 @@
+/about/us:
+  get:
+    tags:
+      - func
+    summary: Airmnb statistic information
+    responses:
+      '200':
+        description: Successful
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AboutUs'
+/about/stat:
+  get:
+    tags:
+      - func
+    summary: Airmnb statistic information
+    responses:
+      '200':
+        description: Successful
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Stat'

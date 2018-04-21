@@ -7,7 +7,7 @@
     Then The response should be the User object including below
     Examples:
       | prop name | value sample                         | nullable | description                                                              |
-      | userid    | 9d14b945-1820-442a-adab-f248e3da2279 |          | Airmnb user id                                                           |
+      | userId    | 9d14b945-1820-442a-adab-f248e3da2279 |          | Airmnb user id                                                           |
       | username  | superopengl                          | yes      | Airmnb user name, unique in the User table                               |
       | fullname  | Jun Shao                             | yes      | User's full name (Chinese users don't separate first name and last name) |
       | firstname | Jun                                  | yes      |                                                                          |
@@ -21,17 +21,17 @@
     And I can conditionally update them
     Examples:
       | prop name | value sample                         | readonly | description                      |
-      | userid    | 9d14b945-1820-442a-adab-f248e3da2279 | yes      | Airmnb user id                   |
+      | userId    | 9d14b945-1820-442a-adab-f248e3da2279 | yes      | Airmnb user id                   |
       | username  | superopengl                          | yes/no   | Once saved cannot change anymore |
       | fullname  | Jun Shao                             | no       |                                  |
       | firstname | Jun                                  | no       |                                  |
       | lastname  | Shao                                 | no       |                                  |
     When I click "Save" button
-    Then It should "PUT" API "/user/{userid}" with the request body like below
+    Then It should "PUT" API "/user/{userId}" with the request body like below
     Examples:
       | prop name | value sample | nullable |
       | username  | superopengl  | x        |
       | fullname  | Jun Shao     | x        |
       | firstname | Jun          | x        |
       | lastname  | Shao         | x        |
-    And I need to "PUT" api "/user/{userid}"
+    And I need to "PUT" api "/user/{userId}"

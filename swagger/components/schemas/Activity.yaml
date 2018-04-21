@@ -1,11 +1,11 @@
 Activity:
   type: object
   properties:
-    activityid:
+    activityId:
       type: string
       format: uuid
       example: 1237bb47-90fb-bd1-4320-976464b04567
-    providerid:
+    providerId:
       type: string
       format: uuid
       example: 99999999-9999-999-9999-976464b04567
@@ -51,18 +51,18 @@ Activity:
       type: integer
       description: The language the service will be provided in. 1 for English, 2 for Mandarin
       example: 3
-    createdat:
+    createAt:
       type: string
       format: date-time
       description: The timestamp (with timezone info) the user was created initially
       example: '2018-04-17T14:00:33.591Z'
   required:
     - nactivityid
-    - providerid
+    - providerId
     - title
     - description
     - cap
     - price
     - startat
     - endat
-    - createdat
+    - createAt

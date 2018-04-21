@@ -1,12 +1,12 @@
-/users/{userid}:
+/users/{userId}:
   get:
     tags:
       - res
     summary: get user object
     parameters:
-      - name: userid
+      - name: userId
         in: path
-        description: Airmnb userid
+        description: Airmnb userId
         schema:
           type: string
           format: uuid
@@ -23,9 +23,9 @@
       - res
     summary: update user object
     parameters:
-      - name: userid
+      - name: userId
         in: path
-        description: Airmnb userid
+        description: Airmnb userId
         schema:
           type: string
           format: uuid

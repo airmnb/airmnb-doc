@@ -2,7 +2,7 @@ Provider:
   description: a provider is user object with certain must-have properites, like fullname, identity ID (passport or ABN), address.
   type: object
   properties:
-    userid:
+    userId:
       type: string
       format: uuid
       description: Amb user's ID
@@ -26,7 +26,7 @@ Provider:
       format: email
     phone:
       type: string
-    createdat:
+    createAt:
       type: string
       format: date-time
       description: The timestamp (with timezone info) the user was created initially

@@ -1,7 +1,7 @@
 ActivityFeedback:
   type: object
   properties:
-    activityid:
+    activityId:
       type: string
       format: uuid
       example: 1237bb47-90fb-bd1-4320-976464b04567
@@ -9,7 +9,7 @@ ActivityFeedback:
       type: string
       format: uuid
       example: 33333333-3333-333-3333-976464b04567
-    providerid:
+    providerId:
       type: string
       format: uuid
       example: 99999999-9999-999-9999-976464b04567
@@ -25,17 +25,17 @@ ActivityFeedback:
       type: integer
       description: 0-5, increment by 1
       example: 5
-    createdat:
+    createAt:
       type: string
       format: date-time
       description: The timestamp (with timezone info) the user was created initially
       example: '2018-04-17T14:00:33.591Z'
   required:
-    - activityid
+    - activityId
     - bookingid
-    - providerid
+    - providerId
     - consumerid
     - content
     - staring
-    - createdat
+    - createAt
       

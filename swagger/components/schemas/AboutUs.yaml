@@ -1,0 +1,16 @@
+Stat:
+  type: object
+  properties:
+    company:
+      type: string
+      example: Air Mom & Baby is a good company. Blah
+    content1:
+      type: string
+    content2:
+      type: string
+    content3:
+      type: string
+    contact:
+      type: string
+      example: sales@airmnb.com
+

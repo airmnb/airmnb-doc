@@ -1,12 +1,12 @@
-/activities/{activityid}:
+/activities/{activityId}:
   get:
     tags:
       - res
     summary: get activity object
     parameters:
-      - name: activityid
+      - name: activityId
         in: path
-        description: Airmnb activityid
+        description: Airmnb activityId
         schema:
           type: string
           format: uuid
@@ -23,9 +23,9 @@
       - res
     summary: update activity object
     parameters:
-      - name: activityid
+      - name: activityId
         in: path
-        description: Airmnb activityid
+        description: Airmnb activityId
         schema:
           type: string
           format: uuid
@@ -38,9 +38,9 @@
       - res
     summary: delete an activity object
     parameters:
-      - name: activityid
+      - name: activityId
         in: path
-        description: Airmnb activityid
+        description: Airmnb activityId
         schema:
           type: string
           format: uuid

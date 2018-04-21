@@ -69,15 +69,15 @@ paths:
           description: Successfully logged in and redirect to the home page
         '403':
           description: No permissions
-  '/logout/{userid}':
+  '/logout/{userId}':
     get:
       tags:
         - func
       summary: Airmnb logout
       parameters:
-        - name: userid
+        - name: userId
           in: path
-          description: Airmnb userid
+          description: Airmnb userId
           schema:
             type: string
             format: uuid
@@ -91,14 +91,26 @@ paths:
                 type: string
                 description: redirect to the home page
                 example: /
-  /stat:
+  /about/us:
     get:
       tags:
         - func
       summary: Airmnb statistic information
       responses:
         '200':
-          description: successful login
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AboutUs'
+  /about/stat:
+    get:
+      tags:
+        - func
+      summary: Airmnb statistic information
+      responses:
+        '200':
+          description: Successful
           content:
             application/json:
               schema:
@@ -116,15 +128,15 @@ paths:
               schema:
                 type: string
                 example: OK
-  '/users/{userid}':
+  '/users/{userId}':
     get:
       tags:
         - res
       summary: get user object
       parameters:
-        - name: userid
+        - name: userId
           in: path
-          description: Airmnb userid
+          description: Airmnb userId
           schema:
             type: string
             format: uuid
@@ -141,9 +153,9 @@ paths:
         - res
       summary: update user object
       parameters:
-        - name: userid
+        - name: userId
           in: path
-          description: Airmnb userid
+          description: Airmnb userId
           schema:
             type: string
             format: uuid
@@ -165,15 +177,15 @@ paths:
       responses:
         '201':
           description: created
-  '/babies/{babyid}':
+  '/babies/{babyId}':
     get:
       tags:
         - res
       summary: get baby object
       parameters:
-        - name: babyid
+        - name: babyId
           in: path
-          description: Airmnb babyid
+          description: Airmnb babyId
           schema:
             type: string
             format: uuid
@@ -190,9 +202,9 @@ paths:
         - res
       summary: update baby object
       parameters:
-        - name: babyid
+        - name: babyId
           in: path
-          description: Airmnb babyid
+          description: Airmnb babyId
           schema:
             type: string
             format: uuid
@@ -205,9 +217,9 @@ paths:
         - res
       summary: delete a baby object
       parameters:
-        - name: babyid
+        - name: babyId
           in: path
-          description: Airmnb babyid
+          description: Airmnb babyId
           schema:
             type: string
             format: uuid
@@ -251,27 +263,27 @@ components:
     User:
       type: object
       properties:
-        userid:
+        userId:
           type: string
           format: uuid
           description: Amb user's ID
           example: 9aa7bb47-90fb-45a1-9020-976464b08b65
-        username:
+        accountName:
           type: string
           description: >-
             Amb user name, unique across the whole Airmnb world. Once created,
             cannot change
           example: superopengl
-        fullname:
+        fullName:
           type: string
           description: >-
             Like "邵俊" which is the fullname in Chinese as Chinese users rarely
             separate to first name and last name
           example: 邵俊
-        firstname:
+        firstName:
           type: string
           example: Jun
-        lastname:
+        lastName:
           type: string
           example: Shao
         gender:
@@ -295,31 +307,31 @@ components:
             - ch
           description: The user preferred UI language
           example: en
-        wechatopenid:
+        wechatOpenId:
           type: string
           description: >-
             WeChat openid if the user is from WeApp. openid is the value
             returned by calling wx.login()
-        googlessoid:
+        googleSsoId:
           type: string
           description: Usually can be the gmail address derived from Google SSO
-        facebookssoid:
+        facebookSsoId:
           type: string
           description: Usually Facebook user id derived from Facebook SSO
-        createdat:
+        createAt:
           type: string
           format: date-time
           description: The timestamp (with timezone info) the user was created initially
           example: '2018-04-17T14:00:33.591Z'
       required:
-        - userid
+        - userId
     Provider:
       description: >-
         a provider is user object with certain must-have properites, like
         fullname, identity ID (passport or ABN), address.
       type: object
       properties:
-        userid:
+        userId:
           type: string
           format: uuid
           description: Amb user's ID
@@ -347,7 +359,7 @@ components:
           format: email
         phone:
           type: string
-        createdat:
+        createAt:
           type: string
           format: date-time
           description: The timestamp (with timezone info) the user was created initially
@@ -403,7 +415,7 @@ components:
     Baby:
       type: object
       properties:
-        babyid:
+        babyId:
           type: string
           format: uuid
           description: Amb baby's ID
@@ -431,13 +443,13 @@ components:
           format: uuid
           description: baby's parent's ID
           example: 44444444-4444-4444-4444-976464b08b65
-        createdat:
+        createAt:
           type: string
           format: date-time
           description: The timestamp (with timezone info) the user was created initially
           example: '2018-04-17T14:00:33.591Z'
       required:
-        - babyid
+        - babyId
         - babyname
         - gender
         - dob
@@ -445,11 +457,11 @@ components:
     Activity:
       type: object
       properties:
-        activityid:
+        activityId:
           type: string
           format: uuid
           example: 1237bb47-90fb-bd1-4320-976464b04567
-        providerid:
+        providerId:
           type: string
           format: uuid
           example: 99999999-9999-999-9999-976464b04567
@@ -501,25 +513,25 @@ components:
             The language the service will be provided in. 1 for English, 2 for
             Mandarin
           example: 3
-        createdat:
+        createAt:
           type: string
           format: date-time
           description: The timestamp (with timezone info) the user was created initially
           example: '2018-04-17T14:00:33.591Z'
       required:
         - nactivityid
-        - providerid
+        - providerId
         - title
         - description
         - cap
         - price
         - startat
         - endat
-        - createdat
+        - createAt
     ActivityFeedback:
       type: object
       properties:
-        activityid:
+        activityId:
           type: string
           format: uuid
           example: 1237bb47-90fb-bd1-4320-976464b04567
@@ -527,7 +539,7 @@ components:
           type: string
           format: uuid
           example: 33333333-3333-333-3333-976464b04567
-        providerid:
+        providerId:
           type: string
           format: uuid
           example: 99999999-9999-999-9999-976464b04567
@@ -545,19 +557,19 @@ components:
           type: integer
           description: '0-5, increment by 1'
           example: 5
-        createdat:
+        createAt:
           type: string
           format: date-time
           description: The timestamp (with timezone info) the user was created initially
           example: '2018-04-17T14:00:33.591Z'
       required:
-        - activityid
+        - activityId
         - bookingid
-        - providerid
+        - providerId
         - consumerid
         - content
         - staring
-        - createdat
+        - createAt
     Booking:
       type: object
       properties:
@@ -569,11 +581,11 @@ components:
           type: integer
           description: The sequencial integer of the booking for this activity
           example: 1
-        activityid:
+        activityId:
           type: string
           format: uuid
           example: 1237bb47-90fb-bd1-4320-976464b04567
-        providerid:
+        providerId:
           type: string
           format: uuid
           example: 99999999-9999-999-9999-976464b04567
@@ -587,16 +599,16 @@ components:
             1 active, 2 checkedin, 4 finished, 8 cancelled, 16 terminated, 32
             inactive
           example: 1
-        createdat:
+        createAt:
           type: string
           format: date-time
           description: The timestamp (with timezone info) the user was created initially
           example: '2018-04-17T14:00:33.591Z'
       required:
         - bookingid
-        - activityid
-        - providerid
+        - activityId
+        - providerId
         - consumerid
         - status
-        - createdat
+        - createAt
   requestBodies: {}

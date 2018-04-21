@@ -1,13 +1,13 @@
-/providers/{providerid}:
+/providers/{providerId}:
   description: A provider is a user with more detailed and mandatory information requirement, like ABN, real name, national ID, and so forth
   get:
     tags:
       - res
     summary: get provider object
     parameters:
-      - name: providerid
+      - name: providerId
         in: path
-        description: Airmnb providerid
+        description: Airmnb providerId
         schema:
           type: string
           format: uuid
@@ -24,9 +24,9 @@
       - res
     summary: update provider object
     parameters:
-      - name: providerid
+      - name: providerId
         in: path
-        description: Airmnb providerid
+        description: Airmnb providerId
         schema:
           type: string
           format: uuid
@@ -37,15 +37,15 @@
           application/json:
             schema:
               $ref: '#/components/schemas/Provider'
-/providers/{providerid}/Venues:
+/providers/{providerId}/Venues:
   get:
     tags:
       - res
     summary: get all the Venues by this provider
     parameters:
-      - name: providerid
+      - name: providerId
         in: path
-        description: Airmnb providerid
+        description: Airmnb providerId
         schema:
           type: string
           format: uuid
@@ -63,9 +63,9 @@
       - res
     summary: Add a new Venue for the provider
     parameters:
-      - name: providerid
+      - name: providerId
         in: path
-        description: Airmnb providerid
+        description: Airmnb providerId
         schema:
           type: string
           format: uuid
