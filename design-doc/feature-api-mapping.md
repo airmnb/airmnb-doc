@@ -27,6 +27,12 @@ Sample
   yyyy?: {}  // Other optional objects
 }
 
+{
+  message?: string // Optional. Translated message that can be shown on page.
+  items: [] // If it's an array. It it's a single resource, its length will be 1. Zero element is possible.
+  extra?: {} // Any additional objects if necessary
+}
+
 ```
 
 ## Responses of 1XX, 3XX
