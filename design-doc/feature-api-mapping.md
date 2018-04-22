@@ -31,6 +31,9 @@ Sample
 ## Responses of 1XX, 3XX
 They should have no response body. 
 
+## Images
+At this time, all images will be updated in base64 and saved in the database.
+
 # API paths
 The root API path is `/api/1.0/*`. As of now two servers' API are
 ## Swagger
@@ -73,7 +76,7 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
   * `GET /about/us`
 * Statistic information
   * `GET /about/stat`
-* Statistic information
+* Debuggin information, like version, commit hash, ...
   * `GET /about/debug`
   ```Javascript
   {
@@ -93,6 +96,8 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
         buildVersion:
         commitHash
       }
+    },
+    xxx?: {
     }
   }
   ```
