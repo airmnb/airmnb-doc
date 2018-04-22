@@ -37,6 +37,11 @@ paths:
       responses:
         '200':
           description: Successful login
+          headers:
+            Authorization:
+              schema:
+                type: string
+                example: Bearer eyJhbGciyu5CSpyHI<jwt>
           content:
             application/json:
               schema:
