@@ -7,10 +7,12 @@ schemas:
   $include: './schemas/Venue.yaml'
   $include: './schemas/Baby.yaml'
   $include: './schemas/Activity.yaml'
+  $include: './schemas/Slot.yaml'
   $include: './schemas/ActivityFeedback.yaml'
   $include: './schemas/Booking.yaml'
   $include: './schemas/Response.yaml'
 requestBodies: 
+  $include: './requestBodies/NativeUserLogin.yaml'
   $include: './requestBodies/User.yaml'
 responses:
   $include: './responses/400.yaml'

@@ -4,37 +4,30 @@ Baby:
     babyId:
       type: string
       format: uuid
-      description: Amb baby's ID
-      example: 9aa7bb47-90fb-45a1-9020-976464b08b65
-    babyname:
+    babyName:
       type: string
-      description: Baby's name. Can be nickname
+      description: Baby's nickname. Considering that parents may not want to disclose the baby's real name.
       example: Alice
     gender:
-      type: boolean
-      example: false
+      type: integer
+      description: 1 for girl, 2 for boy
     dob:
       type: string
       format: date
       example: '2018-12-31'
     language:
       type: string
-      enum: [en, ch]
+      enum: [English, Mandarin]
       description: The user preferred UI language
       example: en
-    owneruserid:
+    createdByUserId:
       type: string
       format: uuid
       description: baby's parent's ID
       example: 44444444-4444-4444-4444-976464b08b65
-    createAt:
-      type: string
-      format: date-time
-      description: The timestamp (with timezone info) the user was created initially
-      example: '2018-04-17T14:00:33.591Z'
   required:
     - babyId
-    - babyname
+    - babyName
     - gender
     - dob
-    - owneruserid
+    - createdByUserId

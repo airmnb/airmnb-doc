@@ -1,8 +1,10 @@
 /login:
-  get:
+  post:
     tags:
       - func
     summary: Native user login
+    requestBody:
+      $ref: '#/components/requestBodies/NativeUserLogin'
     responses:
       400:
         $ref: '#/components/responses/400'

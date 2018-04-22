@@ -1,0 +1,21 @@
+Slot:
+  description: An activity time slot
+  type: object
+  properties:
+    slotId:
+      type: string
+      format: uuid
+    activityId:
+      type: string
+      format: uuid
+    sequenceNumber:
+      type: integer
+      description: The sequence number of this slot in the parent activity, in time order.
+    startAt:
+      type: string
+      format: date-time
+    endAt:
+      type: string
+      format: date-time
+
+

@@ -32,11 +32,11 @@
         required: true
     responses:
       '200':
-        description: updated
+        description: Updated
   delete:
     tags:
       - res
-    summary: delete a baby object
+    summary: Delete a baby object
     parameters:
       - name: babyId
         in: path
@@ -47,7 +47,7 @@
         required: true
     responses:
       '200':
-        description: deleted
+        description: Deleted
 /babies:
   post:
     tags:
@@ -61,5 +61,5 @@
             $ref: '#/components/schemas/Baby'
     responses:
       '201':
-        description: created
+        description: Created
 

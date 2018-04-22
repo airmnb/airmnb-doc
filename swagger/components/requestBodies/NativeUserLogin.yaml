@@ -1,0 +1,13 @@
+NativeUserLogin:
+  description: Native user login request
+  content: 
+    'application/json':
+      schema:
+        type: object
+        properties:
+          accountName: 
+            type: string
+            example: superopengl
+          password:
+            type: string
+            example: Password&&1234
