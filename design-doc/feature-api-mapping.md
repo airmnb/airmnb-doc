@@ -23,12 +23,6 @@ Sample
 ```javascript
 {
   message?: string // Optional. Translated message that can be shown on page.
-  xxxx: {} | [] // xxxx usually should be the same as the api resource name like api/1.0.0/xxxx
-  yyyy?: {}  // Other optional objects
-}
-
-{
-  message?: string // Optional. Translated message that can be shown on page.
   items: [] // If it's an array. It it's a single resource, its length will be 1. Zero element is possible.
   extra?: {} // Any additional objects if necessary
 }
