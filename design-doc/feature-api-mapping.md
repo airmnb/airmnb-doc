@@ -53,16 +53,16 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
   * Airmnb native user login
     * `GET /login`
   * WeApp (Weixin mini-program)
-    * `GET /login?sso=weapp`
+    * `GET /login/weapp?code={openid}`
   * Google SSO
-    * `GET /login?sso=google` 
-    * `GET /logincallback?sso=google`
+    * `GET /login/google`
+    * `GET /login/callback/google`
   * WeChat SSO [Optional]
-    * `GET /login?sso=wechat` 
-    * `GET /logincallback?sso=wechat`
+    * `GET /login/wechat` 
+    * `GET /login/callback/wechat`
   * Facebook SSO [Optional]
-    * `GET /login?sso=facebook` 
-    * `GET /logincallback?sso=facebook`
+    * `GET /login/facebook` 
+    * `GET /login/callback/facebook`
 * User management
   * Get user
     * `GET /users/{userId}`
