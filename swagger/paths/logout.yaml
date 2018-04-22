@@ -12,11 +12,6 @@
           format: uuid
         required: true
     responses:
-      '302':
-        description: redirect to login
-        headers:
-            location:
-              schema:
-                type: "string"
-                description: redirect to the home page
-                example: /
+      '200':
+        description: Successfully logged out.
+

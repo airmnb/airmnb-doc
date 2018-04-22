@@ -1,3 +1,19 @@
+/login:
+  get:
+    tags:
+      - func
+    summary: Native user login
+    responses:
+      400:
+        $ref: '#/components/responses/400'
+      500:
+        $ref: '#/components/responses/500'
+      200:
+        description: Successful login
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
 /login/weapp:
   get:
     tags:
@@ -23,12 +39,13 @@
       - func
     summary: Google SSO
     responses:
-      '200':
+      '302':
         description: successful login
-        content:
-          application/json:
+        headers:
+          Location:
             schema:
-              type: string
+              type: integer
+              example: /login/google/callback
 /login/google/callback:
   get:
     tags:
@@ -38,5 +55,16 @@
     responses:
       '302':
         description: Successfully logged in and redirect to the home page
+        headers:
+          Location:
+            schema:
+              type: integer
+              example: /
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
       '403':
-        description: No permissions
+        $ref: '#/components/responses/400'
+
+

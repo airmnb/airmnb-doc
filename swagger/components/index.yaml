@@ -1,5 +1,7 @@
 schemas:
   $include: './schemas/Stat.yaml'
+  $include: './schemas/AboutUs.yaml'
+  $include: './schemas/Version.yaml'
   $include: './schemas/User.yaml'
   $include: './schemas/Provider.yaml'
   $include: './schemas/Venue.yaml'
@@ -10,3 +12,6 @@ schemas:
   $include: './schemas/Response.yaml'
 requestBodies: 
   $include: './requestBodies/User.yaml'
+responses:
+  $include: './responses/400.yaml'
+  $include: './responses/500.yaml'

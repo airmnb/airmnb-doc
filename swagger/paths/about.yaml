@@ -22,3 +22,15 @@
           application/json:
             schema:
               $ref: '#/components/schemas/Stat'
+/about/version:
+  get:
+    tags:
+      - func
+    summary: Airmnb platform version information
+    responses:
+      '200':
+        description: Successful
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Version'

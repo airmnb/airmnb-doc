@@ -1,0 +1,34 @@
+Version:
+  type: object
+  properties:
+    app:
+      type: object
+      properties:
+        releaseVersion:
+          type: string
+          example: '1.0.87'
+        commitHash:
+          type: string
+          format: uuid
+          example: '6c48b4fc77bc7023ad5afc75961e24c1ff7c4da7'
+    web:
+      type: object
+      properties:
+        releaseVersion:
+          type: string
+          example: '1.0.103'
+        commitHash:
+          type: string
+          format: uuid
+          example: '8c9a40deb331569b16781cabd6d8921c620b9793'
+    weapp:
+      type: object
+      properties:
+        releaseVersion:
+          type: string
+          example: '1.0.15'
+        commitHash:
+          type: string
+          format: uuid
+          example: '0ec6204b4c4df166dc03f54edddb0cd1285673c8'
+

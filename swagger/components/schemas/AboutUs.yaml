@@ -1,4 +1,4 @@
-Stat:
+AboutUs:
   type: object
   properties:
     company:

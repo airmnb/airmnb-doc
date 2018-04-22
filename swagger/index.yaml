@@ -1,12 +1,12 @@
 openapi: 3.0.0
 servers:
-  - url: 'https://www.airmnb.com/api/1.0.0'
-  - url: 'https://www.airmombaby.com/api/1.0.0'
+  - url: 'https://www.airmnb.com/api/1.0'
+  - url: 'https://www.airmombaby.com/api/1.0'
 info:
   description: This is the API design for Air Mom & Baby Global
     [https://www.airmombaby.com](https://www.airmombaby.com) and Air Mom & Baby China 
     [https://www.airmnb.com](https://www.airmnb.com).
-  version: "1.0.0"
+  version: "1.0"
   title: Airmnb API design
   termsOfService: 'pendingd'
   contact:

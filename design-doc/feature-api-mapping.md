@@ -40,8 +40,18 @@ The root API path is `/api/1.0/*`. As of now two servers' API are
 * [https://virtserver.swaggerhub.com/airmnb/api/1.0/](https://virtserver.swaggerhub.com/airmnb/api/1.0/)
 
 ## Prod
-* [https://www.airmombaby.com/api/1.0/](https://www.airmombaby.com/api/1.0/) for global traffic in Sydney region.
-* [https://www.airmnb.com/api/1.0/](https://www.airmnb.com/api/1.0/) for China mainland in Tencent Cloud and all WeApp users.
+The platform has to be hosted on two environments to handle the traffic from China and non-China. But both are sharing the same database, which is supposed to be hosted in AWS Sydney region.
+
+For out of China,
+* Domain name [https://www.airmombaby.com/api/1.0/](https://www.airmombaby.com/api/1.0/).
+* Hosted on AWS Sydney region.
+* Use Google as the map service API provider.
+
+Within China
+* Domain name [https://www.airmnb.com/api/1.0/](https://www.airmnb.com/api/1.0/) 
+* Hosted on Tencent Cloud.
+* User Gaode as the map service API provider.
+* WeApp has to call this domain, no matter if it's within China or not.
 
 
 ## API sub path
@@ -78,31 +88,8 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
   * `GET /about/us`
 * Statistic information
   * `GET /about/stat`
-* Debuggin information, like version, commit hash, ...
-  * `GET /about/debug`
-  ```Javascript
-  {
-    version: {
-      app: {
-        releaseVersion:
-        buildVersion:
-        commitHash
-      },
-      web: {
-        releaseVersion:
-        buildVersion:
-        commitHash
-      },
-      weapp: {
-        releaseVersion:
-        buildVersion:
-        commitHash
-      }
-    },
-    xxx?: {
-    }
-  }
-  ```
+* Get the platform version information
+  * `GET /about/version`
 * User behavior tracking [optional]
   * `POST /trackings`
 
