@@ -33,13 +33,13 @@ Sample
 They should have no response body. 
 
 # API paths
-The root API path is `/api/1.0.0/*`. As of now two servers' API are
+The root API path is `/api/1.0/*`. As of now two servers' API are
 ## Swagger
-* [https://virtserver.swaggerhub.com/airmnb/api/1.0.0/](https://virtserver.swaggerhub.com/airmnb/api/1.0.0/)
+* [https://virtserver.swaggerhub.com/airmnb/api/1.0/](https://virtserver.swaggerhub.com/airmnb/api/1.0/)
 
 ## Prod
-* [https://www.airmombaby.com/api/1.0.0/](https://www.airmombaby.com/api/1.0.0/) for global traffic.
-* [https://www.airmnb.com/api/1.0.0/](https://www.airmnb.com/api/1.0.0/) for China mainland and all WeApp users.
+* [https://www.airmombaby.com/api/1.0/](https://www.airmombaby.com/api/1.0/) for global traffic.
+* [https://www.airmnb.com/api/1.0/](https://www.airmnb.com/api/1.0/) for China mainland and all WeApp users.
 
 
 ## API sub path
