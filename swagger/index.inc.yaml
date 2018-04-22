@@ -36,16 +36,7 @@ paths:
         $ref: '#/components/requestBodies/NativeUserLogin'
       responses:
         '200':
-          description: Successful login
-          headers:
-            Authorization:
-              schema:
-                type: string
-                example: Bearer eyJhbGciyu5CSpyHI<jwt>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
+          $ref: '#/components/responses/LoginResponse'
         '400':
           $ref: '#/components/responses/400'
         '500':
@@ -756,10 +747,28 @@ components:
               error:
                 type: string
                 description: Translated message that can be shown on UI.
-                example: The account doesn't exist.
+                example: The database cannot be found.
               errorDetail:
                 type: string
                 description: Only for debuggin purpose. Always in English
-                example: >-
-                  This is an NumberInavlidError -- stack line 49 at app.pyc
-                  blah.
+                example: DbConnectionError -- stack line 54 at database.pyc blah.
+    LoginResponse:
+      description: 'Login response, no matter if it''s native or via SSO.'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Login successfully (translated)
+              items:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+              extra:
+                type: object
+                properties:
+                  authToken:
+                    type: string
+                    example: <auth token>

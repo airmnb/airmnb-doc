@@ -8,8 +8,8 @@
           error:
             type: string
             description: Translated message that can be shown on UI.
-            example: The account doesn't exist.
+            example: The database cannot be found.
           errorDetail:
             type: string
             description: Only for debuggin purpose. Always in English
-            example: This is an NumberInavlidError -- stack line 49 at app.pyc blah.
+            example: DbConnectionError -- stack line 54 at database.pyc blah.

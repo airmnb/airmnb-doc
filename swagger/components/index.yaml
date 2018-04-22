@@ -17,3 +17,4 @@ requestBodies:
 responses:
   $include: './responses/400.yaml'
   $include: './responses/500.yaml'
+  $include: './responses/LoginResponse.yaml'

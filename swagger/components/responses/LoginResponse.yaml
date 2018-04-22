@@ -1,0 +1,20 @@
+LoginResponse:
+  description: Login response, no matter if it's native or via SSO.
+  content: 
+    application/json:
+      schema: 
+        type: object
+        properties:
+          message:
+            type: string
+            example: Login successfully (translated)
+          items:
+            type: array
+            items: 
+              $ref: '#/components/schemas/User'
+          extra:
+            type: object
+            properties:
+              authToken:
+                type: string
+                example: '<auth token>'
