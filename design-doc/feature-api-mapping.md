@@ -26,7 +26,6 @@ Sample
   items: [] // If it's an array. It it's a single resource, its length will be 1. Zero element is possible.
   extra?: {} // Any additional objects if necessary
 }
-
 ```
 
 ## Responses of 1XX, 3XX
@@ -38,8 +37,8 @@ The root API path is `/api/1.0/*`. As of now two servers' API are
 * [https://virtserver.swaggerhub.com/airmnb/api/1.0/](https://virtserver.swaggerhub.com/airmnb/api/1.0/)
 
 ## Prod
-* [https://www.airmombaby.com/api/1.0/](https://www.airmombaby.com/api/1.0/) for global traffic.
-* [https://www.airmnb.com/api/1.0/](https://www.airmnb.com/api/1.0/) for China mainland and all WeApp users.
+* [https://www.airmombaby.com/api/1.0/](https://www.airmombaby.com/api/1.0/) for global traffic in Sydney region.
+* [https://www.airmnb.com/api/1.0/](https://www.airmnb.com/api/1.0/) for China mainland in Tencent Cloud and all WeApp users.
 
 
 ## API sub path
@@ -74,6 +73,29 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
   * `GET /about/us`
 * Statistic information
   * `GET /about/stat`
+* Statistic information
+  * `GET /about/debug`
+  ```Javascript
+  {
+    version: {
+      app: {
+        releaseVersion:
+        buildVersion:
+        commitHash
+      },
+      web: {
+        releaseVersion:
+        buildVersion:
+        commitHash
+      },
+      weapp: {
+        releaseVersion:
+        buildVersion:
+        commitHash
+      }
+    }
+  }
+  ```
 * User behavior tracking [optional]
   * `POST /trackings`
 
