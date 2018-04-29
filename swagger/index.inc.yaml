@@ -28,10 +28,31 @@ tags:
     description: Resource APIs
 paths:
   /login:
-    post:
+    get:
       tags:
         - func
       summary: Native user login
+      requestBody:
+        $ref: '#/components/requestBodies/NativeUserLogin'
+      responses:
+        '200':
+          $ref: '#/components/responses/LoginResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '500':
+          $ref: '#/components/responses/500'
+  '/login?use={sso_provider}':
+    get:
+      tags:
+        - func
+      summary: Native user login
+      parameters:
+        - name: sso_provider
+          in: query
+          required: true
+          description: 'SSO provider, shouldbe google, facebook or wechat'
+          schema:
+            type: string
       requestBody:
         $ref: '#/components/requestBodies/NativeUserLogin'
       responses:
@@ -60,24 +81,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-  /login/google:
+  '/authentication_response?state={use:''google'',secret:''''}':
     get:
       tags:
         - func
-      summary: Google SSO
-      responses:
-        '302':
-          description: successful login
-          headers:
-            Location:
-              schema:
-                type: integer
-                example: /login/google/callback
-  /login/google/callback:
-    get:
-      tags:
-        - func
-      summary: Google SSO callback URL
+      summary: SSO callback URL
       operationId: updatePet
       responses:
         '302':
@@ -94,7 +102,7 @@ paths:
         '403':
           $ref: '#/components/responses/400'
   '/logout/{userId}':
-    get:
+    post:
       tags:
         - func
       summary: Airmnb logout

@@ -8,6 +8,11 @@ All requests can have the `Accept-Language` to indicate locale.
 Accept-Language: en-US,zh-CHS
 ```
 
+`/sys/*` shouldn't have `Authentication` header.
+`/api/1.0/*` should have `Authentication` header.
+
+
+
 # HTTP responses
 ## Responses of 4XX, 5XX
 Sample
@@ -61,39 +66,36 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
 
 * Login
   * Airmnb native user login
-    * `GET /login`
+    * `GET /sys/login`
   * WeApp (Weixin mini-program)
-    * `GET /login/weapp?code={openid}`
-  * Google SSO
-    * `GET /login/google`
-    * `GET /login/callback/google`
-  * WeChat SSO [Optional]
-    * `GET /login/wechat` 
-    * `GET /login/callback/wechat`
-  * Facebook SSO [Optional]
-    * `GET /login/facebook` 
-    * `GET /login/callback/facebook`
+    * `GET /sys/login/weapp?code={openid}`
+  * Google/Facebook SSO
+    * `GET /sys/login?use=google`
+    * `GET /sys/login?use=facebook`
+    * `GET /sys/login?use=wechat`
+    * `GET /sys/authentication_response`
 * User management
   * Get user
-    * `GET /users/{userId}`
+    * `GET /api/1.0/users/{userId}`
   * Create a new user or register a local user
-    * `POST /users`
+    * `POST /api/1.0/users`
   * Update user data
-    * `PUT /users/{userId}`
+    * `PUT /api/1.0/users/{userId}`
 * Logout
-  * `POST /logout`
+  * `POST /sys/logout`
 * Health check
-  * `GET /health-check`
+  * `GET /sys/health-check`
 * About us information
-  * `GET /about/us`
+  * `GET /sys/about/us`
 * Statistic information
-  * `GET /about/stat`
+  * `GET /sys/about/stat`
 * Get the platform version information
-  * `GET /about/version`
+  * `GET /sys/about/version`
 * User behavior tracking [optional]
-  * `POST /trackings`
+  * `POST /sys/trackings`
 
 ### For Providers
+All are under `/api/1.0/`.
 * Provider information/profile
   * Get provider
     * `GET /providers/{providerId}`
@@ -154,6 +156,7 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
 
 
 ### For Consumers
+All are under `/api/1.0/`.
 * Babies of the consumer
   * Get all babies
     * `GET /users/{userId}/babies?conditions=...`
