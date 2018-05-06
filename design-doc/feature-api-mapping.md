@@ -110,6 +110,9 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
   * `GET /sys/about/version`
 * User behavior tracking [optional]
   * `POST /sys/trackings`
+* Image APIs
+  * `POST /api/1.0/images`. Needs authorization. Returns image id.
+  * `GET /public/images/{id}`. Doesn't need authorization. A public API.
 
 ### For Providers
 All are under `/api/1.0/`.
