@@ -74,6 +74,23 @@ All `xxxId`s mentioned in this documentation are preferred of UUID format.
     * `GET /sys/login?use=facebook`
     * `GET /sys/login?use=wechat`
     * `GET /sys/authentication_response`
+* Native user sign up
+  * `POST /sys/signup`
+  ```javascript
+  // Request
+  {
+    "accountName": "",
+    "password": "",
+    "from"? : "web"
+  }
+  
+  // Response. The same response as /sys/whoami
+  {
+    "sessionId": "",
+    "sessionToken": "",
+    "user": {}
+  }
+  ```
 * User management
   * Get user
     * `GET /api/1.0/users/{userId}`
